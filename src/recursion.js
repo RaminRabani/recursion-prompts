@@ -82,6 +82,7 @@ var sumBelow = function(n) {
 // 6. Get the integers within a range (x, y).
 // range(2,9); // [3,4,5,6,7,8]
 var range = function(x, y) {
+
 };
 
 // 7. Compute the exponent of a number.
@@ -117,6 +118,7 @@ var powerOfTwo = function(n) {
 
 // 9. Write a function that reverses a string.
 var reverse = function(string) {
+
 };
 
 // 10. Write a function that determines if a string is a palindrome.
@@ -134,6 +136,25 @@ var modulo = function(x, y) {
 // 12. Write a function that multiplies two numbers without using the * operator or
 // Math methods.
 var multiply = function(x, y) {
+  if (x===0 || y===0) {
+  	return 0;
+  }
+
+  if (x>0 && y>0) {
+    if (y===1) {
+	  return x;
+	}
+  return x + multiply (x, y-1);
+  }
+  else if (x<0 && y<0) {
+    return multiply (-x, -y);
+  }
+  else if (x<0 && y>0) {
+    return -(multiply (-x, y));
+  }
+  else if (x>0 && y<0) {
+    return -(multiply (x, -y));
+  }
 };
 
 // 13. Write a function that divides two numbers without using the / operator or
