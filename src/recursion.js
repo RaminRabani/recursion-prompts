@@ -312,6 +312,14 @@ var reverseArr = function(array) {
 // buildList(0,5) // [0,0,0,0,0]
 // buildList(7,3) // [7,7,7]
 var buildList = function(value, length) {
+  if (length === 0) {
+    return [];
+  }
+  else {
+    var array = buildList(value, length - 1);
+    array.unshift(value);
+  }
+  return array;
 };
 
 // 19. Implement FizzBuzz. Given integer n, return an array of the string representations of 1 to n.
@@ -351,6 +359,7 @@ var fizzBuzz = function(n) {
 // countOccurrence([2,7,4,4,1,4], 4) // 3
 // countOccurrence([2,'banana',4,4,1,'banana'], 'banana') // 2
 var countOccurrence = function(array, value) {
+  
 };
 
 // 21. Write a recursive version of map.
